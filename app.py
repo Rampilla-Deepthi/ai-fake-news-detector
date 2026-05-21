@@ -17,6 +17,11 @@ import easyocr
 from PIL import Image
 
 from youtube_transcript_api import YouTubeTranscriptApi
+import nltk
+
+nltk.download('punkt')
+
+nltk.download('punkt_tab')
 
 def get_youtube_transcript(video_id):
 
