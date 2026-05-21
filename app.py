@@ -172,7 +172,19 @@ if st.button("Analyze"):
 
                     video_id = youtube_url.split("/")[1][:11]
 
-                text = get_youtube_transcript(video_id)
+                try:
+
+                    text = get_youtube_transcript(video_id)
+
+                except:
+
+                    st.error(
+                        "Could not retrieve YouTube transcript.\n\n"
+                        "This may happen because YouTube blocks "
+                        "cloud server requests."
+                    )
+
+                    st.stop()
 
 
 
